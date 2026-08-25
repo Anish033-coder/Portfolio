@@ -1,0 +1,29 @@
+name: Update CP Stats
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # daily at 6 AM UTC
+  workflow_dispatch:       # manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch CP stats
+        run: node scripts/fetch-cp-stats.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/cpStats.json
+          git diff --cached --quiet || git commit -m "chore: update CP stats [skip ci]"
+          git push
