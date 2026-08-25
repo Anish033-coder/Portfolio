@@ -4,7 +4,7 @@ import { FiMail, FiPhone, FiGithub, FiLinkedin, FiMapPin, FiSend, FiCheck, FiAle
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_URL = 'https://formspree.io/f/VITE_FORMSPREE_ID';
 
 export default function Contact() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
