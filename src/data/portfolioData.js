@@ -9,7 +9,7 @@ export const personalInfo = {
   phone: "+91 9887442517",
   location: "Lucknow, India",
   github: "https://github.com/Anish033-coder",
-  linkedin: "https://www.linkedin.com/in/anish-kumawat/",
+  linkedin: "https://www.linkedin.com/in/anish-kumawat-233177346/",
   leetcode: "https://leetcode.com/Anish033",
   codeforces: "https://codeforces.com/profile/Anish033",
   codechef: "https://www.codechef.com/users/anish_033",
@@ -80,8 +80,8 @@ export const skillsData = [
     ],
   },
   {
-    category: "GenAI",
-    skills: ["Gemini API", "LLM Integration"],
+    category: "AI / ML",
+    skills: ["Gemini API", "Amazon Bedrock", "RAG", "LLM Integration", "LightGBM"],
   },
   {
     category: "Dev Tools",
@@ -95,11 +95,28 @@ export const skillsData = [
       "Linux",
       "Vercel",
       "Render",
+      "AWS",
     ],
   },
 ];
 
 export const projectsData = [
+  {
+    title: "KabadiSetu",
+    subtitle: "Waste sorting & scrap pickups for Jaipur homes, in Hindi and English",
+    stack: ["React", "TypeScript", "Python", "AWS Lambda", "DynamoDB", "Rekognition"],
+    description:
+      "Households identify an item by photo or search, learn which waste stream it belongs to, and send a clear pickup request to their local kabadiwala.",
+    highlights: [
+      "Live on AWS Mumbai: React on Amplify, Python on Lambda, DynamoDB, Cognito and Rekognition, deployed with AWS SAM",
+      "116 automated tests, including double taps and a cancel racing an accept, run against DynamoDB Local",
+      "The AI only names the item; versioned rules decide the waste stream and the person confirms. About $0.0013 per photo scan",
+      "Built for the WeMakeDevs × AWS Environmental Hacks",
+    ],
+    liveDemo: "https://main.d364mryjpwg6jn.amplifyapp.com",
+    github: "https://github.com/Anish033-coder/kabadi-setu",
+    accent: "cyan",
+  },
   {
     title: "Transaction Ledger & Balance Management System",
     stack: ["Node.js", "PostgreSQL", "React", "Jest"],
@@ -112,7 +129,37 @@ export const projectsData = [
       "Load-tested with 20 concurrent transfers (54ms runtime) — zero monetary loss, full ACID compliance",
     ],
     liveDemo: "https://transactional-lader-system.vercel.app",
-    github: "https://github.com/Anish033-coder/Transactional-Ladger-System",
+    github: "https://github.com/Anish033-coder/Transactional_Ledger_System",
+    accent: "purple",
+  },
+  {
+    title: "Business Entity Resolution",
+    subtitle: "Amazon ML Challenge 2026 · team lead",
+    stack: ["Python", "Polars", "LightGBM", "MinHash LSH"],
+    description:
+      "Links business records across three noisy sources with no shared ID (typos, truncated names, Indic scripts) without merging look-alike businesses.",
+    highlights: [
+      "0.979 F0.5 on the public leaderboard, up from 0.929 for our first submission",
+      "Blocking with name/address keys and MinHash keeps 98% of true pairs at about 39 candidates per record",
+      "Two-stage LightGBM on 89 similarity and difference features; each record's matches chosen to maximise expected F0.5",
+      "Traced a leaderboard regression with SHAP and fixed the statistic behind it. Runs on a 16 GB laptop CPU",
+    ],
+    github: "https://github.com/Anish033-coder/amazon-ml-2026",
+    accent: "purple",
+  },
+  {
+    title: "VidyaAI",
+    subtitle: "AI tutor on Amazon Bedrock · team lead",
+    stack: ["React", "Node.js", "Amazon Bedrock", "MongoDB"],
+    description:
+      "Turns a course's PDFs into a tutor that answers with citations to the exact passage, plus quizzes, mock interviews and practice exams.",
+    highlights: [
+      "Bedrock Knowledge Base RAG (Titan embeddings, OpenSearch Serverless) with source citations under every answer",
+      "Five modes share one buildPrompt → callLLM pipeline, wrapped in Bedrock Guardrails",
+      "Environment flags keep the earlier Jina + Groq path working as a fallback when AWS isn't configured",
+      "Moved an existing RAG pipeline onto Bedrock in 4 days at First Commit (Bharat Builds Tour), team of 4",
+    ],
+    github: "https://github.com/Anish033-coder/vidyaai",
     accent: "cyan",
   },
   {

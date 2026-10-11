@@ -1,16 +1,23 @@
-# React + Vite
+# Anish Kumawat — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+My personal site: projects, skills and competitive programming stats.
 
-Currently, two official plugins are available:
+**Live:** https://portfolio-delta-two-54.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+React 19 + Vite, Framer Motion for animations, deployed on Vercel. The contact form uses Formspree.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Editing content
 
-## Expanding the Oxlint configuration
+All text lives in [`src/data/portfolioData.js`](src/data/portfolioData.js): personal info, about, skills, projects and competitive programming profiles. Components in `src/components/` only render that data.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Competitive programming ratings in `src/data/cpStats.json` are refreshed daily by a GitHub Action ([`update-cp-stats.yml`](.github/workflows/update-cp-stats.yml)), which runs [`scripts/fetch-cp-stats.js`](scripts/fetch-cp-stats.js) and commits any change.
+
+## Run locally
+
+```bash
+cp .env.example .env    # set VITE_FORMSPREE_ID
+npm install
+npm run dev
+```
